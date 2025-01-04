@@ -8,9 +8,9 @@ import (
 )
 
 func main() {
-	fmt.Println("Server is running at localhost:8080")
+	fmt.Println("Server is running at localhost:8088")
 	http.HandleFunc("/", hello)
-	http.ListenAndServe(":8080", nil)
+	http.ListenAndServe(":8088", nil)
 }
 
 func hello(w http.ResponseWriter, r *http.Request) {
