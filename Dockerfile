@@ -21,8 +21,8 @@ FROM scratch
 WORKDIR /app
 
 COPY --from=builder /app/hello-app hello-app
-# Expose port 8088 to the outside world
-EXPOSE 8088
+# Expose port 8080 to the outside world
+EXPOSE 8080
 
 # Command to run the executable
 CMD ["/app/hello-app"]
