@@ -2,7 +2,7 @@ FROM golang:1.23.0 AS builder
 
 # Set the Current Working Directory inside the container
 WORKDIR /app
-
+# initialize a new Go module named hello-app
 RUN go mod init hello-app
 # Copy go mod and sum files
 COPY *.go ./
@@ -16,6 +16,7 @@ COPY . .
 # Build the Go app
 RUN CGO_ENABLED=0 GOOS=linux go build -o hello-app
 
+# starts with a blank/small image.
 FROM scratch
 
 WORKDIR /app
